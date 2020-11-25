@@ -16,8 +16,8 @@
 <body>
     <div id='app'>
         <!-- INPUT -->
-        <input type="text" v-model='search' @keyup:enter='getMovies()'>
-        <button @click='getMovies()'>Search</button>
+        <input type="text" v-model='search' @keyup.enter='startSearch()'>
+        <button @click='startSearch()'>Search</button>
         <!-- LIST -->
         <ul>
             <li>

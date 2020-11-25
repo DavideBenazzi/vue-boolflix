@@ -8,6 +8,16 @@ const app = new Vue ({
         search: '',
     },
     methods: {
+        /**
+         * FUNCTION START SEARCH WITH FUNCTIONS GETMOVIES AND GETTVS
+         */ 
+        startSearch(){
+            this.getMovies();
+            this.getTvs();
+        },
+        /**
+         * FUNCTION GETMOVIES FOR GET DATA FROM THE API
+         */ 
         getMovies() {
             axios.get('https://api.themoviedb.org/3/search/movie' , {
                 params: {
@@ -18,6 +28,23 @@ const app = new Vue ({
             .then(response => {
                 this.movies = response.data.results;
                 console.log(this.movies);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        /**
+         * FUNCTION GETTVS FOR GET DATA FROM THE API
+         */ 
+        },getTvs() {
+            axios.get('https://api.themoviedb.org/3/search/tv' , {
+                params: {
+                    api_key: this.apiKey,
+                    query: this.search,
+                }
+            })
+            .then(response => {
+                this.tvs = response.data.results;
+                console.log(this.tvs);
             })
             .catch(error => {
                 console.log(error);
