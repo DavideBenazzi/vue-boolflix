@@ -5,7 +5,7 @@ const app = new Vue ({
         apiKey: '043b0683a6aef848c9e881a8465a584a',
         movies: [],
         tvs: [],
-        search: '',
+        search: ' ',
     },
     methods: {
         /**

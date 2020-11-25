@@ -3,13 +3,45 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
     font-family: 'Open Sans', sans-serif;
 }
 
-ul {
-    margin: 10px;
+h2 {
+    margin-bottom: 20px;
 }
 
 img {
     width: 30px;
+    height: 20px;
 }
+/* APP */
+#app input {
+    margin-bottom: 20px;
+}
+
+#app > ul {
+    list-style: none;
+}
+
+#app ul {
+    margin: 10px;
+}
+
+#app ul li {
+    padding: 10px;
+}
+
+#app ul li ul li {
+    padding-left: 10px;
+}
+
+#app ul li ul li .star {
+    display: inline-flex;
+}
+

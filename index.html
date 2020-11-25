@@ -25,17 +25,19 @@
         <ul>
             <li v-for='movie in movies'>
                 <ul>
-                    <li>Titolo: {{ movie.title }}</li>
-                    <li>Titolo originale: {{ movie.original_title }}</li>
+                    <li>TITOLO: {{ movie.title }}</li>
+                    <li>TITOLO ORIGINALE: {{ movie.original_title }}</li>
                     <li v-if='movie.original_language === "it"'>
-                        Lingua originale: <img src="./img/it.png" alt="bandiera italiana">
+                        LINGUA ORIGINALE: <img src="./img/it.png" alt="bandiera italiana">
                     </li>
                     <li v-else-if='movie.original_language === "en"'>
-                        Lingua originale: <img src="./img/en.png" alt="bandiera inglese">
+                        LINGUA ORIGINALE: <img src="./img/en.png" alt="bandiera inglese">
                     </li>
-                    <li v-else>Lingua originale: {{ movie.original_language }}</li>
-                    <li>Voto: <i class="fas fa-star" v-for='n in starVote(movie.vote_average)'></i>
+                    <li v-else>LINGUA ORIGINALE: {{ movie.original_language }}</li>
+                    <li>VOTO: <span class="star">
+                        <i class="fas fa-star" v-for='n in starVote(movie.vote_average)'></i>
                         <i class="far fa-star" v-for='n in 5 - starVote(movie.vote_average)'></i>
+                    </span>
                     </li>                  
                 </ul>
             </li>
@@ -47,17 +49,19 @@
         <ul>
             <li v-for='tv in tvs'>
                 <ul>
-                    <li>Titolo: {{ tv.name }}</li>
-                    <li>Titolo originale: {{ tv.original_name }}</li>
+                    <li>TITOLO: {{ tv.name }}</li>
+                    <li>TITOLO ORIGINALE: {{ tv.original_name }}</li>
                     <li v-if='tv.original_language === "it"'>
-                        Lingua originale: <img src="./img/it.png" alt="bandiera italiana">
+                        LINGUA ORIGINALE: <img src="./img/it.png" alt="bandiera italiana">
                     </li>
                     <li v-else-if='tv.original_language === "en"'>
-                        Lingua originale: <img src="./img/en.png" alt="bandiera inglese">
+                        LINGUA ORIGINALE: <img src="./img/en.png" alt="bandiera inglese">
                     </li>
-                    <li v-else>Lingua originale: {{ tv.original_language }}</li>
-                    <li>Voto: <i class="fas fa-star" v-for='n in starVote(tv.vote_average)'></i>
+                    <li v-else>LINGUA ORIGINALE: {{ tv.original_language }}</li>
+                    <li>VOTO: <span class="star">
+                        <i class="fas fa-star" v-for='n in starVote(tv.vote_average)'></i>
                         <i class="far fa-star" v-for='n in 5 - starVote(tv.vote_average)'></i>
+                    </span>
                     </li>                  
                 </ul>
             </li>
