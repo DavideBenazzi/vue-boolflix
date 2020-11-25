@@ -15,7 +15,15 @@
 </head>
 <body>
     <div id='app'>
+        <!-- INPUT -->
+        <input type="text" v-model='search' @keyup:enter='getMovies()'>
+        <button @click='getMovies()'>Search</button>
+        <!-- LIST -->
+        <ul>
+            <li>
 
+            </li>
+        </ul>
     </div>
     <!-- AXIOS -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
