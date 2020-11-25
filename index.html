@@ -24,7 +24,12 @@
         </h2>
         <ul>
             <li v-for='movie in movies'>
-                {{ movie.original_title }}
+                <ul>
+                    <li>Titolo: {{ movie.title }}</li>
+                    <li>Titolo originale: {{ movie.original_title }}</li>
+                    <li>Lingua originale: {{ movie.original_language }}</li>
+                    <li>Voto: {{ movie.vote_average }}</li>                  
+                </ul>
             </li>
         </ul>
         <!-- LIST OF TVS-->
@@ -33,7 +38,12 @@
         </h2>
         <ul>
             <li v-for='tv in tvs'>
-                {{ tv.original_name }}
+                <ul>
+                    <li>Titolo: {{ tv.name }}</li>
+                    <li>Titolo originale: {{ tv.original_name }}</li>
+                    <li>Lingua originale: {{ tv.original_language }}</li>
+                    <li>Voto: {{ tv.vote_average }}</li>                  
+                </ul>
             </li>
         </ul>
     </div>
