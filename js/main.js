@@ -51,5 +51,11 @@ const app = new Vue ({
                 console.log(error);
             });
         },
+        /**
+         * FUNCTION FOR THE STAR VOTE
+         */
+        starVote(vote) {
+            return Math.ceil(vote / 2);
+        },
     },
 });

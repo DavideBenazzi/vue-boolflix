@@ -28,7 +28,9 @@
                     <li>Titolo: {{ movie.title }}</li>
                     <li>Titolo originale: {{ movie.original_title }}</li>
                     <li>Lingua originale: {{ movie.original_language }}</li>
-                    <li>Voto: {{ movie.vote_average }}</li>                  
+                    <li>Voto: <i class="fas fa-star" v-for='n in starVote(movie.vote_average)'></i>
+                        <i class="far fa-star" v-for='n in 5 - starVote(movie.vote_average)'></i>
+                    </li>                  
                 </ul>
             </li>
         </ul>
@@ -42,7 +44,9 @@
                     <li>Titolo: {{ tv.name }}</li>
                     <li>Titolo originale: {{ tv.original_name }}</li>
                     <li>Lingua originale: {{ tv.original_language }}</li>
-                    <li>Voto: {{ tv.vote_average }}</li>                  
+                    <li>Voto: <i class="fas fa-star" v-for='n in starVote(tv.vote_average)'></i>
+                        <i class="far fa-star" v-for='n in 5 - starVote(tv.vote_average)'></i>
+                    </li>                  
                 </ul>
             </li>
         </ul>
