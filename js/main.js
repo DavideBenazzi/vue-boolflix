@@ -16,7 +16,7 @@ const app = new Vue ({
             this.getTvs();
         },
         /**
-         * FUNCTION GETMOVIES FOR GET DATA FROM THE API
+         * FUNCTION GETMOVIES FOR GET MOVIES FROM THE API
          */ 
         getMovies() {
             axios.get('https://api.themoviedb.org/3/search/movie' , {
@@ -32,10 +32,11 @@ const app = new Vue ({
             .catch(error => {
                 console.log(error);
             });
+        },
         /**
-         * FUNCTION GETTVS FOR GET DATA FROM THE API
+         * FUNCTION GETTVS FOR GET TVS FROM THE API
          */ 
-        },getTvs() {
+        getTvs() {
             axios.get('https://api.themoviedb.org/3/search/tv' , {
                 params: {
                     api_key: this.apiKey,

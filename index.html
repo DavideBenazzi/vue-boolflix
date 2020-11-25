@@ -18,10 +18,22 @@
         <!-- INPUT -->
         <input type="text" v-model='search' @keyup.enter='startSearch()'>
         <button @click='startSearch()'>Search</button>
-        <!-- LIST -->
+        <!-- LIST OF MOVIES-->
+        <h2>
+            List of Movies
+        </h2>
         <ul>
-            <li>
-
+            <li v-for='movie in movies'>
+                {{ movie.original_title }}
+            </li>
+        </ul>
+        <!-- LIST OF TVS-->
+        <h2>
+            List of Tvs
+        </h2>
+        <ul>
+            <li v-for='tv in tvs'>
+                {{ tv.original_name }}
             </li>
         </ul>
     </div>
