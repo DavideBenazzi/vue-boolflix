@@ -25,6 +25,11 @@
         <ul>
             <li v-for='movie in movies'>
                 <ul>
+                    <li>
+                        POSTER: 
+                        <img v-if='movie.poster_path !== null' :src="'https://image.tmdb.org/t/p/w342' + movie.poster_path" :alt="movie.title">
+                        <img v-else :src="altPoster" alt="No image available">
+                    </li>
                     <li>TITOLO: {{ movie.title }}</li>
                     <li>TITOLO ORIGINALE: {{ movie.original_title }}</li>
                     <li v-if='movie.original_language === "it"'>
@@ -49,6 +54,11 @@
         <ul>
             <li v-for='tv in tvs'>
                 <ul>
+                    <li>
+                        POSTER: 
+                        <img v-if='tv.poster_path !== null' :src="'https://image.tmdb.org/t/p/w342' + tv.poster_path" :alt="tv.name">
+                        <img v-else :src="altPoster" alt="No image available">
+                    </li>
                     <li>TITOLO: {{ tv.name }}</li>
                     <li>TITOLO ORIGINALE: {{ tv.original_name }}</li>
                     <li v-if='tv.original_language === "it"'>

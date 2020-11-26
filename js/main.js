@@ -6,6 +6,7 @@ const app = new Vue ({
         movies: [],
         tvs: [],
         search: ' ',
+        altPoster: 'https://www.altavod.com/assets/images/poster-placeholder.png',
     },
     methods: {
         /**
@@ -23,6 +24,7 @@ const app = new Vue ({
                 params: {
                     api_key: this.apiKey,
                     query: this.search,
+                    language: 'it-IT',
                 }
             })
             .then(response => {
@@ -41,6 +43,7 @@ const app = new Vue ({
                 params: {
                     api_key: this.apiKey,
                     query: this.search,
+                    language: 'it',
                 }
             })
             .then(response => {
