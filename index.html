@@ -15,67 +15,71 @@
 </head>
 <body>
     <div id='app'>
-        <!-- INPUT -->
-        <input type="text" v-model='search' @keyup.enter='startSearch()'>
-        <button @click='startSearch()'>Search</button>
-        <!-- LIST OF MOVIES-->
-        <h2>
-            List of Movies
-        </h2>
-        <ul>
-            <li v-for='movie in movies'>
-                <ul>
-                    <li>
-                        POSTER: 
-                        <img v-if='movie.poster_path !== null' :src="'https://image.tmdb.org/t/p/w342' + movie.poster_path" :alt="movie.title">
-                        <img v-else :src="altPoster" alt="No image available">
-                    </li>
-                    <li>TITOLO: {{ movie.title }}</li>
-                    <li>TITOLO ORIGINALE: {{ movie.original_title }}</li>
-                    <li v-if='movie.original_language === "it"'>
-                        LINGUA ORIGINALE: <img src="./img/it.png" alt="bandiera italiana">
-                    </li>
-                    <li v-else-if='movie.original_language === "en"'>
-                        LINGUA ORIGINALE: <img src="./img/en.png" alt="bandiera inglese">
-                    </li>
-                    <li v-else>LINGUA ORIGINALE: {{ movie.original_language }}</li>
-                    <li>VOTO: <span class="star">
-                        <i class="fas fa-star" v-for='n in starVote(movie.vote_average)'></i>
-                        <i class="far fa-star" v-for='n in 5 - starVote(movie.vote_average)'></i>
-                    </span>
-                    </li>                  
-                </ul>
-            </li>
-        </ul>
-        <!-- LIST OF TVS-->
-        <h2>
-            List of Tvs
-        </h2>
-        <ul>
-            <li v-for='tv in tvs'>
-                <ul>
-                    <li>
-                        POSTER: 
-                        <img v-if='tv.poster_path !== null' :src="'https://image.tmdb.org/t/p/w342' + tv.poster_path" :alt="tv.name">
-                        <img v-else :src="altPoster" alt="No image available">
-                    </li>
-                    <li>TITOLO: {{ tv.name }}</li>
-                    <li>TITOLO ORIGINALE: {{ tv.original_name }}</li>
-                    <li v-if='tv.original_language === "it"'>
-                        LINGUA ORIGINALE: <img src="./img/it.png" alt="bandiera italiana">
-                    </li>
-                    <li v-else-if='tv.original_language === "en"'>
-                        LINGUA ORIGINALE: <img src="./img/en.png" alt="bandiera inglese">
-                    </li>
-                    <li v-else>LINGUA ORIGINALE: {{ tv.original_language }}</li>
-                    <li>VOTO: <span class="star">
-                        <i class="fas fa-star" v-for='n in starVote(tv.vote_average)'></i>
-                        <i class="far fa-star" v-for='n in 5 - starVote(tv.vote_average)'></i>
-                    </span>
-                    </li>                  
-                </ul>
-            </li>
-        </ul>
+        <!-- HEADER -->
+        <header>
+            <!-- INPUT -->
+            <input type="text" v-model='search' @keyup.enter='startSearch()'>
+            <button @click='startSearch()'>Search</button>
+        </header>
+        <!-- CONTAINER -->
+        <div class="container">
+            <!-- LIST OF MOVIES-->
+            <h2>
+                List of Movies
+            </h2>
+            <ul class="catalog">
+                <li v-for='movie in movies'>
+                    <ul>
+                        <li> 
+                            <img v-if='movie.poster_path !== null' :src="'https://image.tmdb.org/t/p/w342' + movie.poster_path" :alt="movie.title">
+                            <img v-else :src="altPoster" alt="No image available">
+                        </li>
+                        <li>TITOLO: {{ movie.title }}</li>
+                        <li>TITOLO ORIGINALE: {{ movie.original_title }}</li>
+                        <li v-if='movie.original_language === "it"'>
+                            LINGUA ORIGINALE: <img class='flag' src="./img/it.png" alt="bandiera italiana">
+                        </li>
+                        <li v-else-if='movie.original_language === "en"'>
+                            LINGUA ORIGINALE: <img class='flag' src="./img/en.png" alt="bandiera inglese">
+                        </li>
+                        <li v-else>LINGUA ORIGINALE: {{ movie.original_language }}</li>
+                        <li>VOTO: <span class="star">
+                            <i class="fas fa-star" v-for='n in starVote(movie.vote_average)'></i>
+                            <i class="far fa-star" v-for='n in 5 - starVote(movie.vote_average)'></i>
+                        </span>
+                        </li>                  
+                    </ul>
+                </li>
+            </ul>
+            <!-- LIST OF TVS-->
+            <h2>
+                List of Tvs
+            </h2>
+            <ul class="catalog">
+                <li v-for='tv in tvs'>
+                    <ul>
+                        <li>
+                            <img v-if='tv.poster_path !== null' :src="'https://image.tmdb.org/t/p/w342' + tv.poster_path" :alt="tv.name">
+                            <img v-else :src="altPoster" alt="No image available">
+                        </li>
+                        <li>TITOLO: {{ tv.name }}</li>
+                        <li>TITOLO ORIGINALE: {{ tv.original_name }}</li>
+                        <li v-if='tv.original_language === "it"'>
+                            LINGUA ORIGINALE: <img class='flag' src="./img/it.png" alt="bandiera italiana">
+                        </li>
+                        <li v-else-if='tv.original_language === "en"'>
+                            LINGUA ORIGINALE: <img class='flag' src="./img/en.png" alt="bandiera inglese">
+                        </li>
+                        <li v-else>LINGUA ORIGINALE: {{ tv.original_language }}</li>
+                        <li>VOTO: <span class="star">
+                            <i class="fas fa-star" v-for='n in starVote(tv.vote_average)'></i>
+                            <i class="far fa-star" v-for='n in 5 - starVote(tv.vote_average)'></i>
+                        </span>
+                        </li>                  
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
     <!-- AXIOS -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
