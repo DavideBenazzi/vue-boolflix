@@ -33,6 +33,7 @@ ul {
     margin-bottom: 20px;
     position: fixed;
     top: 0;
+    z-index: 2;
 }
 /* INPUT */
 #app header input {
@@ -65,11 +66,37 @@ ul {
 #app .container h2 {
     font-size: 50px;
 }
-
+/* CATALOG */
 #app .container .catalog {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+/* OVERVIEW */
+#app .container .catalog .overView {
+    position: relative;
+}
+
+#app .container .catalog .overView .showOverView {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow-y: auto;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+#app .container .catalog .overView:hover .showOverView {
+    opacity: 1;
+}
+
+#app .container .catalog .overView .showOverView p {
+    line-height: 30px;
+    font-size: 20px;
+    padding: 10px;
 }
 
 #app .container ul li {
