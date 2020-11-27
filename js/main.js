@@ -102,5 +102,39 @@ const app = new Vue ({
                 console.log(error);
             });
         },
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        // DEBUG
+        // filterMovies() {
+        //     axios.get('https://api.themoviedb.org/3/search/movie' , {
+        //         params: {
+        //             api_key: this.apiKey,
+        //             query: this.search,
+        //             language: 'it-IT',
+        //         }
+        //     })
+        //     .then(response => {
+        //         this.filteredMovies = response.data.results;
+        //         this.filteredMovies = this.filteredMovies.filter(movie => movie.genre_ids.includes(this.selection));
+        //         this.movies = this.filteredMovies;
+        //         console.log(this.filteredMovies);
+        //         console.log(this.movies);
+        //     })
+        //     .catch(error => {
+        //         console.log(error);
+        //     });
+        // },
+
     },
 });

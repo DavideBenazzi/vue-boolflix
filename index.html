@@ -21,7 +21,7 @@
             <!-- GENRES SELECTION -->
             <!-- <div class="genresSelection">
                 <span>Filtra il genere di Movie preferito : </span>
-                <select name="genresSelect" id="genresSelect" v-model="selectionMovies">
+                <select name="genresSelect" id="genresSelect" v-model="selectionMovies" @change="filterMovies">
                     <option v-for="genre in moviesGenres" :value="genre.id">{{genre.name}}</option>
                 </select>
                 <span>Filtra il genere di TvShow preferito : </span>
