@@ -18,6 +18,17 @@
         <!-- HEADER -->
         <header>
             <img src="https://fontmeme.com/permalink/201126/e7146b2a2da1d54bf69112d8c4856712.png" alt="logo boolflix">
+            <!-- GENRES SELECTION -->
+            <div class="genresSelection">
+                <span>Seleziona il genere di Movie preferito : </span>
+                <select name="genresSelect" id="genresSelect">
+                    <option v-for="genre in moviesGenres" value="genre.name">{{genre.name}}</option>
+                </select>
+                <span>Seleziona il genere di TvShow preferito : </span>
+                <select name="genresSelect" id="genresSelect">
+                    <option v-for="genre in tvsGenres" value="genre.name">{{genre.name}}</option>
+                </select>
+            </div>
             <!-- INPUT -->
             <div>
                 <span>Digita il titolo di un Film o di una serie Tv : </span>

@@ -7,6 +7,12 @@ const app = new Vue ({
         tvs: [],
         search: ' ',
         altPoster: 'https://www.altavod.com/assets/images/poster-placeholder.png',
+        moviesGenres: [],
+        tvsGenres: [],
+    },
+    created(){
+        this.getMoviesGenres();
+        this.getTvsGenres();
     },
     methods: {
         /**
@@ -60,5 +66,41 @@ const app = new Vue ({
         starVote(vote) {
             return Math.ceil(vote / 2);
         },
+        /**
+         * FUNCTION TO GET GENRES FOR MOVIES
+         */
+        getMoviesGenres() {
+            axios.get('https://api.themoviedb.org/3/genre/movie/list' , {
+                params: {
+                    api_key: this.apiKey,
+                    language: 'it-IT',
+                }
+            })
+            .then(response => {
+                this.moviesGenres = response.data.genres;
+                console.log(this.moviesGenres);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        },
+        /**
+         * FUNCTION TO GET GENRES FOR TVS
+         */
+        getTvsGenres() {
+            axios.get('https://api.themoviedb.org/3/genre/tv/list' , {
+                params: {
+                    api_key: this.apiKey,
+                    language: 'it-IT',
+                }
+            })
+            .then(response => {
+                this.tvsGenres = response.data.genres;
+                console.log(this.tvsGenres);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        }
     },
 });

@@ -35,6 +35,10 @@ ul {
     top: 0;
     z-index: 2;
 }
+/* GENRESSELECTION */
+#app header .genresSelection {
+    display: flex;
+}
 /* INPUT */
 #app header input {
     width: 400px;
