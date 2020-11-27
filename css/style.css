@@ -38,7 +38,14 @@ ul {
 /* GENRESSELECTION */
 #app header .genresSelection {
     display: flex;
+    justify-content: space-between;
+    padding: 5px;
 }
+
+#app header .genresSelection span {
+    margin: 0 10px;
+}
+
 /* INPUT */
 #app header input {
     width: 400px;
@@ -46,21 +53,6 @@ ul {
     border-radius: 4px;
     outline: none;
     padding: 5px;
-}
-
-#app header button {
-    width: 100px;
-    border-radius: 4px;
-    background-color: #f1faee;
-    color: #1d3557;
-    outline: none;
-    padding: 5px;
-    cursor: pointer;
-}
-
-#app header button:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-    color: #f1faee;
 }
 /* CONTAINER */
 #app .container {

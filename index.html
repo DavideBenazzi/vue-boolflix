@@ -19,21 +19,20 @@
         <header>
             <img src="https://fontmeme.com/permalink/201126/e7146b2a2da1d54bf69112d8c4856712.png" alt="logo boolflix">
             <!-- GENRES SELECTION -->
-            <div class="genresSelection">
-                <span>Seleziona il genere di Movie preferito : </span>
-                <select name="genresSelect" id="genresSelect">
-                    <option v-for="genre in moviesGenres" value="genre.name">{{genre.name}}</option>
+            <!-- <div class="genresSelection">
+                <span>Filtra il genere di Movie preferito : </span>
+                <select name="genresSelect" id="genresSelect" v-model="selectionMovies">
+                    <option v-for="genre in moviesGenres" :value="genre.id">{{genre.name}}</option>
                 </select>
-                <span>Seleziona il genere di TvShow preferito : </span>
-                <select name="genresSelect" id="genresSelect">
-                    <option v-for="genre in tvsGenres" value="genre.name">{{genre.name}}</option>
+                <span>Filtra il genere di TvShow preferito : </span>
+                <select name="genresSelect" id="genresSelect" v-model="selectionTvs">
+                    <option v-for="genre in tvsGenres" :value="genre.id">{{genre.name}}</option>
                 </select>
-            </div>
+            </div> -->
             <!-- INPUT -->
             <div>
                 <span>Digita il titolo di un Film o di una serie Tv : </span>
                 <input type="text" v-model='search' @keyup.enter='startSearch()' placeholder="Digita la tua ricerca...">
-                <button @click='startSearch()'>Search</button>
             </div>
         </header>
         <!-- CONTAINER -->

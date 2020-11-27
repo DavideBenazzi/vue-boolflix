@@ -9,6 +9,10 @@ const app = new Vue ({
         altPoster: 'https://www.altavod.com/assets/images/poster-placeholder.png',
         moviesGenres: [],
         tvsGenres: [],
+        moviesFiltered: [],
+        tvsFiltered: [],
+        selectionMovies: '',
+        selectionTvs: '',
     },
     created(){
         this.getMoviesGenres();
@@ -35,7 +39,6 @@ const app = new Vue ({
             })
             .then(response => {
                 this.movies = response.data.results;
-                console.log(this.movies);
             })
             .catch(error => {
                 console.log(error);
@@ -54,7 +57,6 @@ const app = new Vue ({
             })
             .then(response => {
                 this.tvs = response.data.results;
-                console.log(this.tvs);
             })
             .catch(error => {
                 console.log(error);
@@ -78,7 +80,6 @@ const app = new Vue ({
             })
             .then(response => {
                 this.moviesGenres = response.data.genres;
-                console.log(this.moviesGenres);
             })
             .catch(error => {
                 console.log(error);
@@ -96,11 +97,10 @@ const app = new Vue ({
             })
             .then(response => {
                 this.tvsGenres = response.data.genres;
-                console.log(this.tvsGenres);
             })
             .catch(error => {
                 console.log(error);
             });
-        }
+        },
     },
 });
